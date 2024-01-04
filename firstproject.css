@@ -4,8 +4,11 @@
 }
 #registration span{
     color: red;
+    display: block;
 }
-
+#registration{
+    display: none;
+}
 #signin{
     display: none;
 }
@@ -20,8 +23,8 @@
     width: 80%;
     margin-top: 20px;
     margin-bottom: 10px;
-    margin-left: 120px;
-    display: none;
+    margin:30px auto;
+    display: block;
 }
 #marklist{
     width: 19%;
@@ -30,11 +33,39 @@
     margin-left: 10px;
 }
 #container{
-  background-color:lightgray;
+  background-color:  #f8f8f8;
   width: 80%;
   height: 90vh;
-  display: flex;
-  margin-left: 120px;
+  margin:30px auto;
+  padding: 15px;
+}
+#ExamInfo{
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+}
+#category{
+    flex:1;
+}
+#quesCount{
+    flex: 1;
+    text-align: right;
+}
+#questionh{
+    background-color: white;
+    margin-top: 15px;
+    padding: 20px;
+}
+#answerArea{
+    background-color: #fff;
+    padding: 20px;  
+}
+#answerArea .Answer{
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+#questionh h2{
+    margin: 0;
 }
 #previousbutton{
     display: none;
@@ -44,4 +75,41 @@
     height: 30px;
     background-color: blue;
     color: white;
+}
+.markedgQue{
+    width:150px;
+    height:60px;
+    padding: 10px;
+    margin: 10px;
+    color:white;
+    background-color: blue;
+}
+.markedgQue:hover{
+    color: bisque;
+    border-radius: 15px;
+}
+.bullets{
+   background-color: #fff;
+   display: flex;
+   padding: 20px;
+}
+.bullets .spans{
+    flex:1;
+    display: flex;
+}
+ .bullets .spans span {
+    width: 30px;
+    height: 10px;
+    background-color: #ddd;
+    margin-right: 5px;
+  }
+.bullets .spans span.on {
+    background-color: #0075ff;
+  }
+#timeoutdiv
+{
+    background-color: antiquewhite;
+    width: 200px;
+    height: 200px;
+    display: none;
 }
