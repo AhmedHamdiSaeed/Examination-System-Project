@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#registration span{
+    color: red;
+}
+
+#signin{
+    display: none;
+}
+#signin span{
+    color: red;
+}
+#exam{
+    width: 80%;
+    height: 150px;
+}
+#timeprogress{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    display: none;
+}
+#marklist{
+    width: 19%;
+    height: 90vh;
+    background: red;
+    margin-left: 10px;
+}
+#container{
+  background-color:lightgray;
+  width: 80%;
+  height: 90vh;
+  display: flex;
+  margin-left: 120px;
+}
+#previousbutton{
+    display: none;
+}
+#qnumbers{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+}
