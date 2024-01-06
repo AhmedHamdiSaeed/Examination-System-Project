@@ -156,9 +156,7 @@ body{
   #signin span{
     color: red;
 }
-#signin{
-    display: none;
-}
+
 
 
 
@@ -170,7 +168,6 @@ body{
     margin-left: 150px;
     background-color: white;
     border-radius: 6px;
-    display: none;
 }
 #timeprogress::-webkit-progress-bar{
     background-color: white;
@@ -261,7 +258,7 @@ width: 55%;
     background: #88006A;
     color: white;
   }
-#previousbutton,#qnumbers,#nextbutton,#markbutton{
+#previousbutton,#qnumbers,#nextbutton,#markbutton,#unmarkbutton{
     background-color: #CD55A9;
     padding: 20px;
     border-radius: 6px;
@@ -282,6 +279,10 @@ width: 55%;
     color: white;
   }
 #markbutton:hover{
+    background: #88006A;
+    color: white;
+  }
+  #unmarkbutton:hover{
     background: #88006A;
     color: white;
   }
@@ -324,9 +325,7 @@ width: 55%;
   .quesInMarkList:hover{
     color: white;
   }
-#container{
-    display: none;
-}
+
 
 
 
@@ -411,9 +410,7 @@ width: 55%;
     border-radius: 50%;
     border-top-color: black;
   }
-#timeoutdiv{
-    display: none;
-}
+
 
 
 
@@ -429,7 +426,7 @@ width: 55%;
     margin: auto;
     margin-top: 50px;
 }
-#tryagain{
+#tryagain,#Reviewanswers{
     background-color: #CD55A9;
     padding: 20px;
     border-radius: 6px;
@@ -444,6 +441,18 @@ width: 55%;
     background: #88006A;
     color: white;
   }
-#gradesPage{
-   display: none; 
+  #Reviewanswers{
+    background: #88006A;
+    color: white;
+  }
+
+
+/* review page //////////////////////////////////////////////*/
+.correctanswerclass{
+  background-color: green  !important;  
+  color: white !important;
+}
+.wronganswerclass{
+  background-color: red    !important;
+  color: white    !important;
 }
