@@ -1,115 +1,449 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
+body{
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #D65DB1;
+  }
+/* registration page /////////////////////////////// */
+#registration{
+    position: relative;
+    width: 480px;
+    height: 600px;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 30px;
+  }
+  #registration h2{
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #09001d;
+    margin-bottom: 30px;
+  }
+  #registration h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 129px;
+    border-radius: 12px;
+    background: #D65DB1;
+  }
+  #registration input{
+  height: 40px;
+  width: 90%;
+  outline: none;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #09001d;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  }
+  #registration input:focus,
+  #registration input:valid{
+  border-color: #D65DB1;
+}
+#registerationsubmit{
+    color: #09001d;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: #D65DB1;
+    cursor: pointer;
+    position: absolute;
+    top: 500px;
+    width: 40%;
+    left: 130px;
+}
+#registerationsubmit:hover{
+    background: #88006A;
+  }
 #registration span{
     color: red;
-    display: block;
+    
 }
-#registration{
+
+/* #registration{
     display: none;
+} */
+
+
+
+/* signin page ///////////////////////////////////////// */
+#signin{
+    position: relative;
+    width: 480px;
+    height: 400px;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 30px;
+}
+#signin h2{
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: #09001d;
+    margin-bottom: 30px;
+  }
+  #signin h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 75px;
+    border-radius: 12px;
+    background: #D65DB1;
+  }
+
+#signin input{
+    height: 40px;
+    width: 90%;
+    outline: none;
+    padding: 0 15px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #09001d;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    }
+    #signin input:focus,
+    #signin input:valid{
+    border-color: #D65DB1;
+  }
+  #signinbutton{
+    color: #09001d;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: #D65DB1;
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    width: 40%;
+    left: 130px;
+    font-size: 15px;
+    text-align: center;
+}
+#signinbutton:hover{
+    background: #88006A;
+  }
+  #signin span{
+    color: red;
 }
 #signin{
     display: none;
 }
-#signin span{
-    color: red;
+
+
+
+/* exam page ///////////////////////////////////////// */
+#timeprogress{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+    background-color: white;
+    border-radius: 6px;
+    display: none;
+}
+#timeprogress::-webkit-progress-bar{
+    background-color: white;
+    border-radius: 6px;
+}
+#timeprogress::-webkit-progress-value{
+    background-color: #88006A;
+    border-radius: 6px;
+}
+
+#container{
+    background-color:  #f8f8f8;
+    width: 80%;
+    height: 95vh;
+    margin:30px auto;
+    padding: 15px;
+    border-radius: 6px;
+  }
+  #ExamInfo{
+    display: flex;
+    background-color: #CD55A9;
+    border-radius: 6px;
+    padding: 20px;
+    width: 99%;
+    
+}
+#category{
+    flex:1;
+    color: #09001d;
+}
+#time{
+    flex: 1;  
+    color: #09001d;
+    text-align: center;
+}
+#quesCount{
+    flex: 1;
+    text-align: right;
+    color: #09001d;
+}
+#exammarkcontainer{
+    width: 98%;
+    height: 75vh;
+    margin:30px auto;
+    padding-left: 15px;
+    display: flex; 
+    position: relative;
 }
 #exam{
     width: 80%;
     height: 150px;
 }
-#timeprogress{
-    width: 80%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin:30px auto;
-    display: block;
-}
-#marklist{
-    width: 19%;
-    height: 90vh;
-    background: red;
-    margin-left: 10px;
-}
-#container{
-  background-color:  #f8f8f8;
-  width: 80%;
-  height: 90vh;
-  margin:30px auto;
-  padding: 15px;
-}
-#ExamInfo{
-    display: flex;
-    background-color: #fff;
-    padding: 20px;
-}
-#category{
-    flex:1;
-}
-#quesCount{
-    flex: 1;
-    text-align: right;
-}
 #questionh{
-    background-color: white;
+    color: #09001d;
     margin-top: 15px;
+    margin-bottom: 15px;
     padding: 20px;
 }
-#answerArea{
-    background-color: #fff;
-    padding: 20px;  
+#exam input{
+    margin: 20px; 
+    cursor: pointer;
+    
+     
 }
-#answerArea .Answer{
-    background-color: #f8f8f8;
-    padding: 20px;
+#exam input:checked {
+    accent-color:#CD55A9 ;
 }
-#questionh h2{
-    margin: 0;
+#exam input:checked +label{
+    color:white ;
+}
+#exam label{
+    color:#09001d ;  
+    background-color: #CD55A9; 
+    padding: 12px;
+    border-radius: 6px;
+    display: inline-block;               /*to make it can take width and height*/
+    width: 190px;
+}
+#prenexmarkdiv{                          /*this div contain previous and qnumbers and next and mark buttons */
+display: flex;
+width: 55%;
 }
 #previousbutton{
-    display: none;
+    display: none;   
+    margin-left: 30px;
+}
+#previousbutton:hover{
+    background: #88006A;
+    color: white;
+  }
+#previousbutton,#qnumbers,#nextbutton,#markbutton{
+    background-color: #CD55A9;
+    padding: 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #09001d;
+    margin-top: 90px;
+    margin-right: 50px;
 }
 #qnumbers{
-    width: 30px;
-    height: 30px;
-    background-color: blue;
+    height: 56px;
+    cursor: none;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#nextbutton:hover{
+    background: #88006A;
     color: white;
-}
-.markedgQue{
-    width:150px;
-    height:60px;
-    padding: 10px;
-    margin: 10px;
-    color:white;
-    background-color: blue;
-}
-.markedgQue:hover{
-    color: bisque;
-    border-radius: 15px;
-}
-.bullets{
-   background-color: #fff;
-   display: flex;
-   padding: 20px;
-}
-.bullets .spans{
-    flex:1;
-    display: flex;
-}
- .bullets .spans span {
-    width: 30px;
-    height: 10px;
-    background-color: #ddd;
-    margin-right: 5px;
   }
-.bullets .spans span.on {
-    background-color: #0075ff;
+#markbutton:hover{
+    background: #88006A;
+    color: white;
   }
-#timeoutdiv
-{
-    background-color: antiquewhite;
-    width: 200px;
-    height: 200px;
+  #submitquesbutton{
+    margin-top: 45px;
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #09001d;
+    background-color: #CD55A9;
+  }
+  #submitquesbutton:hover{
+    background: #88006A;
+    color: white;
+  }
+  
+
+#marklist{
+    width: 15%;
+    height: 73vh;
+    background: #CD55A9;
+   margin-left: 60px;
+   border-radius: 6px;
+}
+.quesInMarkList{
+    background-color: #88006A;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #09001d;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .quesInMarkList:hover{
+    color: white;
+  }
+#container{
     display: none;
+}
+
+
+
+/*time out page /////////////////////////////////////////// */
+#timeoutdiv{
+    position: relative;
+    width: 480px;
+    height: 400px;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 50px;
+}
+.emoji-sad {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #D65DB1;
+    border-radius: 50%;
+    margin-left: 1%;
+    margin: auto;
+  }
+  
+  .face {
+    width: inherit;
+    height: inherit;
+  }
+  
+  .eyebrow-left {
+    position: absolute;
+    height: 20px;
+    width: 24px;
+    left: 27px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    border-top-color: black;
+    top: 25px;
+  }
+  
+  .eyebrow-right {
+    position: absolute;
+    height: 20px;
+    width: 24px;
+    right: 27px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    border-top-color: black;
+    top: 25px;
+  }
+  
+  .eye-left {
+    position: absolute;
+    width: 11px;
+    height: 12px;
+    background: black;
+    left: 33px;
+    top: 40px;
+    border-radius: 50%;
+  }
+  
+  .eye-right {
+    position: absolute;
+    width: 11px;
+    height: 12px;
+    background: black;
+    right: 33px;
+    top: 40px;
+    border-radius: 50%;
+  }
+  .mouth-sad {
+    position: absolute;
+    width: 78px;
+    height: 80px;
+    border: 6px solid transparent;
+    top: 70px;
+    left: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top-color: black;
+  }
+#timeoutdiv{
+    display: none;
+}
+
+
+
+/* grades page//////////////////// */
+#gradesPage{
+    position: relative;
+    width: 480px;
+    height: 400px;
+    background: #fff;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    margin: auto;
+    margin-top: 50px;
+}
+#tryagain{
+    background-color: #CD55A9;
+    padding: 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: #09001d;
+    font-size: large;
+    margin-top: 195px;
+    margin-left: 150px;
+}
+#tryagain:hover{
+    background: #88006A;
+    color: white;
+  }
+#gradesPage{
+   display: none; 
 }
