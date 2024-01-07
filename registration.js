@@ -96,23 +96,7 @@ else{
 
 
 
-// for test
-// var setIntervalReference=setInterval(function(){
-//     timeProgress.value+=1;
-//     setTime(time--);
-//     if(timeProgress.value===timeProgress.max){
-//         clearInterval(setIntervalReference);
-//         timeProgress.style.display="none";
-//         containerDiv.style.display="none";
-//         timeoutDiv.style.display="block";
-//         timeoutDiv.innerHTML+=`<br><br><br><center><h2>Sorry ${firstNameInput.value} ${lastNameInput.value} Exam time is out</h2></center>`;
-
-//     }
-//     },1000);
-    
-
-
- ////////////////////////////////////////////////////////////////////////////////////////////   
+  
 
 
 
