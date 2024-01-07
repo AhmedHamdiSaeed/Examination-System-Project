@@ -11,7 +11,7 @@ var question3=new questions(" I came _____ America.",["from", "at","in","on"],"f
 var question4=new questions("Choose the correct possessive pronoun for the sentence:The book is ___.",["Me","I","Mine","Myself"],"Mine",4);
 var question5=new questions("I hope everyone_____ learned something from this.",["had","have","has","has to"],"has",5);
 var question6=new questions("What is the correct order of the words in a basic English sentence?",["Subject - Object - Verb","Verb - Object - Subject","Object - Subject - Verb","Verb - Subject - Object"],"Subject - Object - Verb",6);
-var question7=new questions("Select the correct plural form of the noun child:",["Childs","Childes","Children","Child's"],"Child's",7);
+var question7=new questions("Select the correct plural form of the noun child:",["Childs","Childes","Children","Child's"],"Children",7);
 var question8=new questions("Which word functions as an adverb in the sentence: He ran quickly to catch the bus.",["Bus","Catch","Ran","Quickly"],"Quickly",8);
 var question9=new questions("What is the comparative form of the adjective tall?",["Tallest","Tallness","Taller","Tallish"],"Taller",9);
 
@@ -158,6 +158,7 @@ previousButton.addEventListener("click",function(){
         nextbutton.style.display="block";  
     }
 });
+//////////////////////////////////////////////////////////////////////////////////////////////
 //next button
 nextbutton.addEventListener("click",function(){
     counter++;
@@ -169,8 +170,36 @@ nextbutton.addEventListener("click",function(){
     }
     });
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//mark button
+markbutton.addEventListener("click",function(){
+    if(markedQuestions.indexOf(counter)===-1){
+        markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestionLocal(${counter})">mrk-Question${counter+1}</div>`;
+        markedQuestions.push(counter);
+        
+    }
+});
+/////////////////////////////////////////////////////////////////////////////////////
+//un mark button
+unmarkbutton.addEventListener("click",function(){
+var unmarkQindex=markedQuestions.indexOf(counter);            //it will return the index 
+markedQuestions.splice(unmarkQindex,1);
+markListDiv.innerHTML="";
+markedQuestions.forEach(function(el){
+markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestionLocal(${el})">mrk-Question${el+1}</div>`; 
+console.log(el);
+});
+});
 
+////////////////////////////////////////////////////////////////////////////////////
+//submit button
+submitQuesButton.textContent="Go To Grades Page";
+submitQuesButton.addEventListener("click",function(){
+    window.location.replace("grades.html");
+});
+///////////////////////////////////////////////////////////////////////////
 localStorage.removeItem("reviewCheck");
+
     }
 
 
@@ -193,8 +222,7 @@ else{
         genaricNumber=Math.floor(Math.random()*10);
         }while(selectedQuestions.indexOf(genaricNumber)!==-1);
         selectedQuestions.push(genaricNumber); }
-    console.log("exam");
-    console.log(selectedQuestions);////////
+
     ///////////////////////////////////////////////////////////////////////////////////////////////
     //calling
     setTime(time--);
@@ -211,8 +239,7 @@ else{
             nextbutton.style.display="none";
         }
         });
-    
-    ////////////////////////////////////////////////////////////////////////////////////
+     //////////////////////////////////////////////////////////////////////////////////////
     //previous Button
     previousButton.addEventListener("click",function(){
             counter--;
@@ -225,9 +252,10 @@ else{
                 nextbutton.style.display="block";  
             }
         });
+        //////////////////////////////////////////////////////////////////////////////////////
         //submit button
-submitQuesButton.addEventListener("click",function(){
-    for(var i=0;i<10;i++){
+      submitQuesButton.addEventListener("click",function(){
+        for(var i=0;i<10;i++){
         if(savedAnswersArr[i].answer===questionArray[i].rightAnswer){
             grade++;
         }}
@@ -236,13 +264,32 @@ submitQuesButton.addEventListener("click",function(){
         localStorage.setItem("userGrades",grade);
         window.location.replace("grades.html");
         });
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //mark button
+        markbutton.addEventListener("click",function(){
+            if(markedQuestions.indexOf(counter)===-1){
+                markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestion(${counter})">mrk-Question${counter+1}</div>`;
+                markedQuestions.push(counter);
+                
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////
+        //un mark button
+        unmarkbutton.addEventListener("click",function(){
+        var unmarkQindex=markedQuestions.indexOf(counter);            //it will return the index 
+        markedQuestions.splice(unmarkQindex,1);
+        markListDiv.innerHTML="";
+        markedQuestions.forEach(function(el){
+        markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestion(${el})">mrk-Question${el+1}</div>`; 
+        console.log(el);
+        });
+        });
+
+
 }
 
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-
+////////////////////////////////////////////////////////////////////////////////////////
 
 //functions
 function setTime(time){
@@ -310,85 +357,4 @@ function savedAnswer(x){
 
 
 
-///////////////////////////////////////////////////////////
-// var setIntervalReference=setInterval(function(){
-//     timeProgress.value+=1;
-//     setTime(time--);
-//     if(timeProgress.value===timeProgress.max){
-//         clearInterval(setIntervalReference);
-//         window.location.replace("timeout.html");
 
-//     }
-//     },1000);
-
-// /////////////////////////////////////////////////////////////
-// for(var i=0;i<10;i++){
-//     do{
-//     genaricNumber=Math.floor(Math.random()*10);
-//     }while(selectedQuestions.indexOf(genaricNumber)!==-1);
-//     selectedQuestions.push(genaricNumber); }
-
-
-// ///////////////////////////////////////////////////////////////////////////////////////////////
-// //calling
-// setTime(time--);
-// generateQuestions();
-
-// ///////////////////////////////////////////////////////////////////////////////////////
-// //next button
-// nextbutton.addEventListener("click",function(){
-//     counter++;
-//     generateQuestions();
-//     previousButton.style.display="block";
-//     qNumbersDiv.textContent=counter+1;
-//     if(counter===9){
-//         nextbutton.style.display="none";
-//     }
-//     });
-
-// ////////////////////////////////////////////////////////////////////////////////////
-// //previous Button
-// previousButton.addEventListener("click",function(){
-//         counter--;
-//         generateQuestions();
-//         qNumbersDiv.textContent=counter+1;
-//         if(counter===0){
-//             previousButton.style.display="none";
-//         }
-//         if(counter<9){
-//             nextbutton.style.display="block";  
-//         }
-//     });
-
-/////////////////////////////////////////////////////////////////////////////////////////
-//mark button
-    markbutton.addEventListener("click",function(){
-        if(markedQuestions.indexOf(counter)===-1){
-            markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestion(${counter})">mrk-Question${counter+1}</div>`;
-            markedQuestions.push(counter);
-            
-        }
-    });
-/////////////////////////////////////////////////////////////////////////////////////
-//un mark button
-unmarkbutton.addEventListener("click",function(){
-var unmarkQindex=markedQuestions.indexOf(counter);            //it will return the index 
-markedQuestions.splice(unmarkQindex,1);
-markListDiv.innerHTML="";
-markedQuestions.forEach(function(el){
-    markListDiv.innerHTML+=`<div class="quesInMarkList"onclick="goQuestion(${el})">mrk-Question${el+1}</div>`; 
-console.log(el);
-});
-});
-////////////////////////////////////////////////////////////////////////////////////////
-// //submit button
-// submitQuesButton.addEventListener("click",function(){
-// for(var i=0;i<10;i++){
-//     if(savedAnswersArr[i].answer===questionArray[i].rightAnswer){
-//         grade++;
-//     }}
-//     localStorage.setItem("selectedQuestionsLocal",selectedQuestions);
-//     localStorage.setItem("savedAnswersArrLocal",savedAnswersArr);
-//     localStorage.setItem("userGrades",grade);
-//     window.location.replace("grades.html");
-//     });
